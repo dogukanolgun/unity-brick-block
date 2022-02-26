@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    int width = 5;
-    int height = 10;
+    public static LevelGenerator instance;
+    public int width = 5;
+    public int height = 10;
     public GridElement GridElement;
     public GridElement[] GridElements;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        instance = this;
+
         GridElements = new GridElement[width * width * height];
 
         for (int y = 0; y < height; y++)
@@ -20,10 +24,10 @@ public class LevelGenerator : MonoBehaviour
             {
                 for (int z = 0; z < width; z++)
                 {
-                    GridElement GridElementInsance
+                    GridElement gridElementInsance
                             = Instantiate(GridElement, new Vector3(x, y, z), Quaternion.identity, this.transform);
-                    GridElementInsance.name = "GridElement" + x + "_" + y + "_" + z;
-                    GridElements[x + width * (z + width * y)] = GridElementInsance;
+                    gridElementInsance.Initialize(x, y, z);
+                    GridElements[x + width * (z + width * y)] = gridElementInsance;
                 }
             }
         }
