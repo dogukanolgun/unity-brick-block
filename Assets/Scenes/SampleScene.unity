@@ -1555,8 +1555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc297a23c0b28980adc163b9c3067c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 1
+  height: 1
   GridElement: {fileID: -384088089609400031, guid: 857a3a405eb5ddeb7bdcc4a98aafda22, type: 3}
+  cornerElement: {fileID: 0}
   GridElements: []
+  cornerElements: []
 --- !u!4 &1438605051
 Transform:
   m_ObjectHideFlags: 0
