@@ -48,6 +48,11 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+
+        foreach (CornerElement corner in cornerElements)
+        {
+            corner.SetNearGridElements();
+        }
     }
 
     // Update is called once per frame
